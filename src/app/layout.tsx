@@ -1,6 +1,12 @@
 import './globals.css'
 import styles from './page.module.css'
 
+// Please note that you will also need to create an icon for your app.
+// An option is to use a website to generate those easily.
+// For example https://www.pwabuilder.com/imageGenerator. The generated icons then need to be put into the ./public/icons folder.
+
+// Now we need to link our manifest.json file to our Next.js app.
+
 export const metadata = {
   title: ' WebPush Tutorial',
   description: 'Native Apps Are Dead - WebPush on iOS with Next.js!',
