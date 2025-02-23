@@ -7,13 +7,16 @@
 
 // Service Worker는 네트워크 요청을 가로채고, 캐시된 응답을 반환하거나 네트워크를 통해 요청을 처리할 수 있습니다.
 self.addEventListener('push', async (event) => {
+  console.log('Push event received:', event)
   if (event.data) {
     const eventData = await event.data.json() // 푸시 이벤트가 들어올 때마다 이벤트 데이터( await event.data.json())를 추출
+    console.log('Push event data:', eventData)
     showLocalNotification(eventData.title, eventData.body, self.registration)
   }
 })
 
 const showLocalNotification = (title, body, swRegistration) => {
+  console.log('Showing notification:', title, body)
   swRegistration.showNotification(title, {
     body,
     icon: '/icons/icon-192.png',
